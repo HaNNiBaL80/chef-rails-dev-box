@@ -17,19 +17,22 @@ Vagrant::Config.run do |config|
     chef.add_role "rails-development"
     chef.json = {
         :mysql => {
-          :server_root_password   => '',
-          :server_debian_password => '',
-          :server_repl_password   => ''
+          :server_root_password   => 'toor',
+          :server_debian_password => 'toor',
+          :server_repl_password   => 'toor'
         },
         "postgresql" => {
           "password" => {
-            "postgres" => ""
+            "postgres" => "toor"
           }
         },
         "rbenv" => {
-          "global"  => "2.0.0-p0",
-          "rubies" => [ "2.0.0-p0" ],
+          "global"  => "ree-1.8.7-2012.02",
+          "rubies" => [ "2.0.0-p0", "ree-1.8.7-2012.02" ],
           "gems" => {
+            "ree-1.8.7-2012.02" => [
+              { 'name' => 'bundler' }
+            ],
             "2.0.0-p0" => [
               { 'name' => 'bundler' }
             ]
